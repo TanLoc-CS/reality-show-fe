@@ -1,13 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+.modal-cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	transform: translateZ(0);
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-area {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 640px;
+	height: 800px;
+	background-color: #fffbeb;
+	border-radius: 20px;
+
+	box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+
+	left: 50%;
+	top: 50%;
+	height: auto;
+	transform: translate(-50%, -50%);
+}
+
+._modal-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0.5em;
+	line-height: 1;
+	background: #f6f6f7;
+	border: 0;
+	box-shadow: 0;
+	cursor: pointer;
+}
+
+._modal-close-icon {
+	width: 24px;
+	height: 24px;
+	fill: transparent;
+	stroke: black;
+	stroke-linecap: round;
+	stroke-width: 2;
+}
+
+.modal-body {
+	padding-top: 48px;
+	width: 640px;
+	height: 800px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	border-radius: 20px;
+}
+._hide-visual {
+	border: 0 !important;
+	clip: rect(0 0 0 0) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
+
+.scroll-lock {
+	overflow: hidden;
+	margin-right: 17px;
 }
