@@ -19,14 +19,10 @@ function Home() {
 		alert("Save successfully!");
 	};
 
-	useEffect(() => {
-		async function fetchData() {
-			// You can await here
-			const res = await traineeController.getTrainees();
-			console.log(res);
-		}
-		fetchData();
-	}, []);
+	// useEffect(() => {
+	// 	traineeController.getTrainees().then((res) => console.log(res));
+	// }, []);
+	traineeController.getTrainees().then((res) => console.log(res));
 
 	return (
 		<div className="w-[1720px] h-fit mt-28 flex flex-col justify-start items-center scrollbar-hide overflow-y-scroll">
