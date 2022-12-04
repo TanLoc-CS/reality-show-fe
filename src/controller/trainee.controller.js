@@ -1,8 +1,8 @@
-import TraineeAPI from "../services/trainee.service";
+import traineeModel from "../model/trainee.model";
 
-export const getTrainees = async () => {
+export const getTrainees = () => {
 	try {
-		const result = await TraineeAPI.getTrainees();
+		const result = traineeModel.getTrainees();
 		if (result.statusText !== "OK") {
 			throw result.statusText;
 		}

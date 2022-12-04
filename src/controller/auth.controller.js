@@ -1,10 +1,9 @@
-import AuthAPI from "../services/auth.service";
+import userModel from "../model/user.model";
 
 const signin = async (username, password) => {
 	try {
-		const result = await AuthAPI.login(username, password);
-		if (result.statusText !== "OK") {
-			throw result.statusText;
+		if (username !== userModel.username || password !== userModel.password) {
+			throw Error("Invalid username or password");
 		}
 		localStorage.setItem("isAuthenticated", true);
 	} catch (err) {
