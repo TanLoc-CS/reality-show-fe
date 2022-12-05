@@ -12,6 +12,7 @@ export const Form = (props) => {
 				<div className="w-[232px] h-[82px] p-4 bg-indigo-50 flex flex-col justify-center items-start rounded-lg shadow-lg">
 					<label htmlFor="fname">First name</label>
 					<input
+						type="text"
 						className="w-[200px] h-[32px] px-2 border"
 						placeholder="Enter trainee first name..."
 						id="fname"
@@ -21,6 +22,7 @@ export const Form = (props) => {
 				<div className="w-[232px] h-[82px] p-4 bg-indigo-50 flex flex-col justify-center items-start rounded-lg shadow-lg">
 					<label htmlFor="lname">Last name</label>
 					<input
+						type="text"
 						className="w-[200px] h-[32px] px-2 border"
 						id="lname"
 						placeholder="Enter trainee first name..."
@@ -31,6 +33,7 @@ export const Form = (props) => {
 			<div className="w-[484px] h-[82px] p-4 mb-4 bg-indigo-50 flex flex-col justify-center items-start rounded-lg shadow-lg">
 				<label htmlFor="ssn">Social security number</label>
 				<input
+					type="text"
 					className="w-[452px] h-[32px] px-2 border"
 					id="ssn"
 					placeholder="Enter trainee ssn..."
@@ -40,6 +43,7 @@ export const Form = (props) => {
 			<div className="w-[484px] h-[82px] p-4 mb-4 bg-indigo-50 flex flex-col justify-center items-start rounded-lg shadow-lg">
 				<label htmlFor="addr">Address</label>
 				<input
+					type="text"
 					className="w-[452px] h-[32px] px-2 border"
 					id="addr"
 					placeholder="Enter trainee address..."
@@ -49,6 +53,7 @@ export const Form = (props) => {
 			<div className="w-[484px] h-[82px] p-4 mb-4 bg-indigo-50 flex flex-col justify-center items-start rounded-lg shadow-lg">
 				<label htmlFor="phone">Phone number</label>
 				<input
+					type="text"
 					className="w-[452px] h-[32px] px-2 border"
 					id="phone"
 					placeholder="Enter trainee phone number..."
@@ -58,7 +63,7 @@ export const Form = (props) => {
 			<div className="w-[484px] h-[82px] p-4 mb-4 bg-indigo-50 flex flex-col justify-center items-start rounded-lg shadow-lg">
 				<label htmlFor="dob">Date of birth</label>
 				<input
-					type="datetime-local"
+					type="text"
 					className="w-[452px] h-[32px] px-2 border"
 					id="dob"
 					placeholder="Enter trainee date of birth..."
@@ -68,6 +73,7 @@ export const Form = (props) => {
 			<div className="w-[484px] h-[82px] p-4 mb-4 bg-indigo-50 flex flex-col justify-center items-start rounded-lg shadow-lg">
 				<label htmlFor="company_id">Company id</label>
 				<input
+					type="text"
 					className="w-[452px] h-[32px] px-2 border"
 					id="company_id"
 					placeholder="Enter trainee company id..."
@@ -77,6 +83,7 @@ export const Form = (props) => {
 			<div className="w-[484px] h-[82px] p-4 mb-5 bg-indigo-50 flex flex-col justify-center items-start rounded-lg shadow-lg">
 				<label htmlFor="photo">Photo URL</label>
 				<input
+					type="text"
 					className="w-[452px] h-fit px-2"
 					id="photo"
 					placeholder="Enter trainee photo url..."

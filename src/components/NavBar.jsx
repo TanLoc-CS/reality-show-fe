@@ -3,20 +3,26 @@ import { useNavigate } from "react-router-dom";
 
 import AuthController from "../controller/auth.controller";
 import Logo from "./Logo";
+import traineeController from "../controller/trainee.controller";
 
 function NavBar() {
 	const navigate = useNavigate();
-	const [pokedex, setPokedex] = useState();
-	const [filteredData, setFilteredData] = useState();
+	const [trainees, setTrainees] = useState([]);
+	const [filteredData, setFilteredData] = useState([]);
 	const [searchModal, setSearchModal] = useState("hidden");
+
+	useEffect(() => {
+		traineeController.getTrainees().then((res) => setTrainees(res.data));
+	}, []);
 
 	const handleChange = (e) => {
 		e.preventDefault();
 		const search = e.target.value;
-		const newFilter = pokedex.filter(
-			(value) => value.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
-		);
-		if (search === "") setFilteredData(pokedex);
+		const newFilter = trainees.filter((value) => {
+			const name = value.fname + " " + value.lname;
+			return name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+		});
+		if (search === "") setFilteredData(trainees);
 		else setFilteredData(newFilter);
 	};
 
@@ -51,13 +57,13 @@ function NavBar() {
 					}
 				>
 					{filteredData &&
-						filteredData.map((pokemon) => (
-							<a href={`/pokemon/${pokemon.id}`} key={pokemon.name}>
+						filteredData.map((trainee) => (
+							<a href={`/trainee/${trainee.ssn}`} key={trainee.ssn}>
 								<div
 									className="md:w-[332px] h-8 hover:bg-poke-lemon-yellow text-left pl-8 text-lg"
-									key={pokemon.name}
+									key={trainee.ssn}
 								>
-									{pokemon.name}
+									{trainee.fname + " " + trainee.lname}
 								</div>
 							</a>
 						))}
