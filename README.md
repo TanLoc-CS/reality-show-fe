@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Trainee Management-fe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the front-end repos of Trainee Management project for Database fundamentals course.
 
 ## Available Scripts
 
